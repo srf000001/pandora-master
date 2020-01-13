@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='tech.linjiang'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        minSdkVersion versions.MIN_SDK
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    api "androidx.appcompat:appcompat:1.0.2"
+    api "androidx.recyclerview:recyclerview:1.0.0"
+    api "com.google.android.material:material:1.0.0"
+    api "com.squareup.okhttp3:okhttp:${versions.OKHTTP}"
+}
